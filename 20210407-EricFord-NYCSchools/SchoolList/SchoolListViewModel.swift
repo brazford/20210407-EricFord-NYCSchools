@@ -11,13 +11,10 @@ class SchoolListViewModel : ObservableObject
 {
     @Published var schoolViewModels = [SchoolDetailsViewModel]()
 
-    func loadData()
-    {
-        Networking.getSchools(session: URLSession.shared, completionHandler:
-        {
+    func loadData() {
+        Networking.getSchools(session: URLSession.shared, completionHandler: {
             data, response, error in
-                if let data = data
-                {
+                if let data = data {
                     let decoder = JSONDecoder()
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     decoder.dateDecodingStrategy = .secondsSince1970
@@ -34,8 +31,7 @@ class SchoolListViewModel : ObservableObject
         })
     }
 
-    func getSATsCompletionHandler(data: Data?, response: URLResponse?, error: Error?)
-    {
+    func getSATsCompletionHandler(data: Data?, response: URLResponse?, error: Error?) {
         if let data = data {
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
