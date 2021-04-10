@@ -140,7 +140,7 @@ class _0210407_EricFord_NYCSchoolsTests: XCTestCase {
     }
 
     func testSchoolViewModelPopulation() {
-        let viewModel = SchoolViewModel(school: School(dbn: "dbn", schoolName: "Prep", location: "London (51.50007773, -0.1246402)", boro: "M"
+        let viewModel = SchoolDetailsViewModel(school: School(dbn: "dbn", schoolName: "Prep", location: "London (51.50007773, -0.1246402)", boro: "M"
         ))
         XCTAssertEqual(viewModel.latitude, 51.50007773)
         XCTAssertEqual(viewModel.address, "London ")
